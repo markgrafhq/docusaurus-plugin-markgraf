@@ -1,0 +1,58 @@
+{
+  "name": "@markgrafhq/markgraf-docusaurus",
+  "version": "0.1.0",
+  "description": "Docusaurus plugin + component for embedding markgraf animations. Transforms ```markgraf fenced code blocks into a live player and exposes a <Markgraf src=\"…\" /> MDX component.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./remark": {
+      "default": "./dist/remark-markgraf.js"
+    },
+    "./css": "./node_modules/@markgrafhq/markgraf-react/dist/markgraf-react.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp src/remark-markgraf.mjs dist/remark-markgraf.js"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": ">=3",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@markgrafhq/markgraf-react": "^0.1.0",
+    "unist-util-visit": "^5"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "markgraf",
+    "docusaurus",
+    "docusaurus-plugin",
+    "mdx",
+    "remark",
+    "animation",
+    "diagram"
+  ],
+  "license": "MIT",
+  "author": "Mark Eibes <mark.eibes@gmail.com>",
+  "homepage": "https://github.com/markgrafhq/markgraf-docusaurus#readme",
+  "bugs": "https://github.com/markgrafhq/markgraf-docusaurus/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markgrafhq/markgraf-docusaurus.git"
+  }
+}
