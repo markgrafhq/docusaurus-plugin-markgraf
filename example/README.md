@@ -1,6 +1,6 @@
 # Example Docusaurus site
 
-Minimal Docusaurus site that uses `@markgrafhq/markgraf-docusaurus`.
+Minimal Docusaurus site that uses `@markgrafhq/docusaurus-plugin-markgraf`.
 
 ```bash
 cd example

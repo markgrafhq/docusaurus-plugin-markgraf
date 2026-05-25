@@ -1,4 +1,4 @@
-import remarkMarkgraf from "@markgrafhq/markgraf-docusaurus/remark";
+import remarkMarkgraf from "@markgrafhq/docusaurus-plugin-markgraf/remark";
 
 export default {
   title: "markgraf example",
@@ -18,5 +18,5 @@ export default {
       },
     ],
   ],
-  plugins: ["@markgrafhq/markgraf-docusaurus"],
+  plugins: ["@markgrafhq/docusaurus-plugin-markgraf"],
 };

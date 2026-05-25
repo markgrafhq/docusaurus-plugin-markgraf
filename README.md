@@ -1,18 +1,18 @@
-# @markgrafhq/markgraf-docusaurus
+# @markgrafhq/docusaurus-plugin-markgraf
 
 Docusaurus plugin + component for embedding [markgraf](https://github.com/markgrafhq) animations.
 
 ## Install
 
 ```bash
-npm install @markgrafhq/markgraf-docusaurus @markgrafhq/markgraf-react
+npm install @markgrafhq/docusaurus-plugin-markgraf @markgrafhq/markgraf-react
 ```
 
 ## Configure
 
 ```js
 // docusaurus.config.js
-import remarkMarkgraf from "@markgrafhq/markgraf-docusaurus/remark";
+import remarkMarkgraf from "@markgrafhq/docusaurus-plugin-markgraf/remark";
 
 export default {
   presets: [
@@ -24,7 +24,7 @@ export default {
       },
     ],
   ],
-  plugins: ["@markgrafhq/markgraf-docusaurus"],
+  plugins: ["@markgrafhq/docusaurus-plugin-markgraf"],
 };
 ```
 
@@ -53,7 +53,7 @@ frame v1 {
 Or use the component directly in MDX:
 
 ```mdx
-import { Markgraf } from "@markgrafhq/markgraf-docusaurus";
+import { Markgraf } from "@markgrafhq/docusaurus-plugin-markgraf";
 
 <Markgraf src={`seed 1\nframe v1 { +node a "A" }`} />
 ```
