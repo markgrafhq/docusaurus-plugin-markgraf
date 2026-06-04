@@ -1,6 +1,6 @@
 {
   "name": "@markgrafhq/docusaurus-plugin-markgraf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Docusaurus plugin + component for embedding markgraf animations. Transforms ```markgraf fenced code blocks into a live player and exposes a <Markgraf src=\"…\" /> MDX component.",
   "type": "module",
   "main": "./dist/index.js",
