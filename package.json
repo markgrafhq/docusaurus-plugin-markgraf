@@ -14,6 +14,7 @@
     "./remark": {
       "default": "./dist/remark-markgraf.js"
     },
+    "./dist/*": "./dist/*",
     "./css": "./node_modules/@markgrafhq/markgraf-react/dist/markgraf-react.css"
   },
   "files": [
@@ -23,7 +24,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp src/remark-markgraf.mjs dist/remark-markgraf.js"
+    "build": "tsc -p tsconfig.json && cp src/remark-markgraf.mjs dist/remark-markgraf.mjs && cp src/remark-markgraf.mjs dist/remark-markgraf.js"
   },
   "peerDependencies": {
     "@docusaurus/core": ">=3",
@@ -31,7 +32,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@markgrafhq/markgraf-react": "^0.0.22",
+    "@markgrafhq/markgraf-react": "^0.1.0",
     "unist-util-visit": "^5"
   },
   "devDependencies": {

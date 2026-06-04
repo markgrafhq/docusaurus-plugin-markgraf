@@ -1,3 +1,7 @@
+---
+slug: /
+---
+
 # Markgraf demo
 
 A request flowing from client to API:

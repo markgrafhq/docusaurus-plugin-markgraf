@@ -2,15 +2,18 @@ import remarkMarkgraf from "@markgrafhq/docusaurus-plugin-markgraf/remark";
 
 export default {
   title: "markgraf example",
-  url: "https://example.com",
-  baseUrl: "/",
+  url: "https://markgrafhq.github.io",
+  baseUrl: "/docusaurus-plugin-markgraf/",
+  organizationName: "markgrafhq",
+  projectName: "docusaurus-plugin-markgraf",
+  onBrokenLinks: "warn",
   presets: [
     [
       "classic",
       {
         docs: {
           path: "docs",
-          routeBasePath: "docs",
+          routeBasePath: "/",
           remarkPlugins: [remarkMarkgraf],
         },
         blog: false,

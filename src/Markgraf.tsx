@@ -11,5 +11,9 @@ export default function Markgraf({ src, renderer = "canvas", className }: Markgr
   if (typeof window === "undefined") {
     return <div className={className} data-markgraf-placeholder />;
   }
-  return <MarkgrafPlayer src={src} renderer={renderer} className={className} />;
+  return (
+    <div className={className}>
+      <MarkgrafPlayer src={src} renderer={renderer} />
+    </div>
+  );
 }
