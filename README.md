@@ -57,3 +57,14 @@ import { Markgraf } from "@markgrafhq/docusaurus-plugin-markgraf";
 
 <Markgraf src={`seed 1\nscene v1 { + a: A }`} />
 ```
+
+Players include the floating play, scrub, time, and speed controls by default.
+Hide them with `controls={false}`, or replace them with a render function that
+receives the underlying `MarkgrafApi`:
+
+```mdx
+<Markgraf
+  src={source}
+  controls={(api) => <MyDiagramControls api={api} />}
+/>
+```

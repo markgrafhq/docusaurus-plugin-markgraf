@@ -1,6 +1,10 @@
 import remarkMarkgraf from "./remark-markgraf.mjs";
 
-export { default as Markgraf } from "./Markgraf.js";
+export {
+  default as Markgraf,
+  type MarkgrafControls,
+  type MarkgrafProps,
+} from "./Markgraf.js";
 
 export default function pluginMarkgraf() {
   return {

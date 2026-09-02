@@ -26,7 +26,7 @@
     "./dist/markgraf-react.css"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp src/remark-markgraf.mjs dist/remark-markgraf.mjs && cp src/remark-markgraf.mjs dist/remark-markgraf.js && cp node_modules/@markgrafhq/markgraf-react/dist/markgraf-react.css dist/markgraf-react.css"
+    "build": "tsc -p tsconfig.json && cp src/remark-markgraf.mjs dist/remark-markgraf.mjs && cp src/remark-markgraf.mjs dist/remark-markgraf.js && cp src/player.css dist/markgraf-react.css"
   },
   "peerDependencies": {
     "@docusaurus/core": ">=3",
