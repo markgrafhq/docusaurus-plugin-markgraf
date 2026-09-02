@@ -10,7 +10,7 @@
     "@docusaurus/core": "^3.5.0",
     "@docusaurus/preset-classic": "^3.5.0",
     "@markgrafhq/docusaurus-plugin-markgraf": "file:..",
-    "@markgrafhq/markgraf-react": "^0.1.0",
+    "@markgrafhq/markgraf-react": "^0.1.23",
     "@mdx-js/react": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
