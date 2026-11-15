@@ -1,12 +1,11 @@
 import React, { type ReactNode, useEffect, useState } from "react";
 import { useMarkgraf, type MarkgrafApi } from "@markgrafhq/markgraf-react";
 
-type Renderer = "canvas" | "svg";
 type Theme = "light" | "dark";
 
 export type MarkgrafControls =
   | boolean
-  | ((api: MarkgrafApi<Element>) => ReactNode);
+  | ((api: MarkgrafApi) => ReactNode);
 const playIcon = (
   <svg viewBox="0 0 15 15" aria-hidden="true" focusable="false">
     <path d="M3.24 2.05a.5.5 0 0 1 .52.02l8.5 5a.5.5 0 0 1 0 .86l-8.5 5A.5.5 0 0 1 3 12.5v-10a.5.5 0 0 1 .24-.45Z" />
@@ -32,7 +31,6 @@ const speedIcon = (
 
 export interface MarkgrafProps {
   src: string;
-  renderer?: Renderer;
   className?: string;
   /**
    * Shows the transport bar by default. Pass `false` to hide it, or a render
@@ -73,7 +71,7 @@ const DefaultControls = ({
   speed,
   setSpeed,
 }: {
-  api: MarkgrafApi<Element>;
+  api: MarkgrafApi;
   speed: number;
   setSpeed: (speed: number) => void;
 }) => {
@@ -139,7 +137,7 @@ const Controls = ({
   api,
   controls,
 }: {
-  api: MarkgrafApi<Element>;
+  api: MarkgrafApi;
   controls: MarkgrafControls;
 }) => {
   const [speed, setSpeed] = useState(1);
@@ -159,7 +157,7 @@ const CanvasPlayer = ({
   className,
   controls,
 }: MarkgrafProps & { theme: Theme; controls: MarkgrafControls }) => {
-  const api = useMarkgraf(src, { renderer: "canvas", theme });
+  const api = useMarkgraf(src, { theme });
 
   return (
     <div
@@ -177,46 +175,10 @@ const CanvasPlayer = ({
   );
 };
 
-const SvgPlayer = ({
-  src,
-  theme,
-  className,
-  controls,
-}: MarkgrafProps & { theme: Theme; controls: MarkgrafControls }) => {
-  const api = useMarkgraf(src, { renderer: "svg", theme });
-
-  return (
-    <div
-      className={`markgraf-doc-player ${className ?? ""}`}
-      data-markgraf-theme={theme}
-    >
-      <svg
-        className="markgraf-player markgraf-doc-stage"
-        ref={api.elementRef}
-        onClick={api.toggle}
-        aria-label="Animated Markgraf diagram"
-      />
-      <Controls api={api} controls={controls} />
-    </div>
-  );
-};
-
 const MountedPlayer = (props: MarkgrafProps) => {
   const theme = useDocumentTheme();
-  return props.renderer === "svg" ? (
-    <SvgPlayer
-      {...props}
-      renderer="svg"
-      theme={theme}
-      controls={props.controls ?? true}
-    />
-  ) : (
-    <CanvasPlayer
-      {...props}
-      renderer="canvas"
-      theme={theme}
-      controls={props.controls ?? true}
-    />
+  return (
+    <CanvasPlayer {...props} theme={theme} controls={props.controls ?? true} />
   );
 };
 
